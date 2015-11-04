@@ -1,0 +1,8 @@
+<div ng-controller="oneController">
+
+angular.module('myApp', [])
+.controller('oneController', ['$scope', function($scope) {
+  $scope.words = [];
+  }]);
+console.log(words);
+  

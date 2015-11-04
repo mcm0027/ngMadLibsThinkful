@@ -1,0 +1,88 @@
+heading {
+  background-color: brown;
+  margin-bottom: 0;
+}
+
+.container {
+  width: 55em;
+  margin: auto;
+  border: 2px solid black;
+  overflow: hidden;
+  
+}
+
+aside {
+  width: 14em;
+  display: inline-block;
+  float: left;
+  border-right: 2px solid black;
+  text-align: center;
+}
+
+
+aside img {
+  width: 10em;
+  
+}
+
+
+heading section {
+  width: 40em;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  margin-top: 0;
+} 
+
+heading section img {
+  width: 40%;
+}
+
+heading h1 {
+  font-size: 3.9em;
+  margin-top: 10px;
+  margin-bottom: 9px;
+}
+
+.inputs {
+  width: 55em;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.inputs h2 {
+  margin-left: 1.5em;
+  font-size: 1.8em;
+}
+
+ul {
+  margin-bottom: 4em;
+}
+
+li {
+  width: 30%;
+  margin: 15px 1%;
+  display: inline-block;
+  text-align: center;
+}
+
+li input {
+  text-align: center;
+  font-size: 1.2em;
+  border: 2px solid black;
+}
+
+.story {
+  width: 55em;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.story p {
+  font-size: 1.6em;
+  margin: 1.5em 5%;
+}
+
