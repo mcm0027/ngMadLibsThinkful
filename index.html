@@ -7,57 +7,88 @@
     <script src="script.js"></script>
   </head>
   <body ng-app="myApp">
+    <div ng-controller="oneController">
+      <heading>
+        <div class="container">
+          <aside>
+            <img src="mad-lib-happy-face.png">
+          </aside>
+          <section>
+            <img src="ng-mad-libs-logo.png">
+            <h1>Automate This!</h1>
+          </section>
+        </div>
+        <div style="clear:both"></div>
+      </heading>
 
-    <heading>
-      <div class="container">
-        <aside>
-          <img src="mad-lib-happy-face.png">
-        </aside>
-        <section>
-          <img src="ng-mad-libs-logo.png">
-          <h1>Automate This!</h1>
-        </section>
-      </div>
-      <div style="clear:both"></div>
-    </heading>
+      <section class="inputs">
+        <h2>Please provide the following words:</h2>
+        <ul>
+          <li>
+            <input type="text" ng-model="name" placeholder="Name">
+            <label>
+              <input type="radio" ng-model="sexMain.name" value="he">
+              Male
+            </label>
+            <label>
+              <input type="radio" ng-model="sexMain.name" value="she">
+              Female
+            </label>
+          </li>
+          <li>
+            <input type="text" ng-model="dirtyTask" placeholder="Dirty task"> 
+          </li>
+          <li>
+            <input type="text" ng-model="adjective" placeholder="Adjective"> 
+          </li>
 
-    <section class="inputs">
-      <h2>Please provide the following words:</h2>
-      <ul>
-        <li>
-          <input type="text" ng-model="femaleName" placeholder="female name">
-        </li>
-        <li>
-          <input type="text" ng-model="dirtyTask" placeholder="Dirty task"> 
-        </li>
-        <li>
-          <input type="text" ng-model="badCeleb" placeholder="Obnoxious celebrity">
-        </li>
-        <li>
-          <input type="text" ng-model="jobTitle" placeholder="Job title">
-        </li>
-        <li>
-          <input type="text" ng-model="celeb" placeholder="Celebrity"> 
-        </li>
-        <li>
-          <input type="text" ng-model="bigNum" placeholder="Huge number">
-        </li>
-        <li>
-          <input type="text" ng-model="badTask" placeholder="Tedious task"> 
-        </li>
-        <li>
-          <input type="text" ng-model="badSkill" placeholder="Useless skill">
-        </li> 
-        <li>
-          <input type="text" ng-model="adjective" placeholder="Adjective"> 
-        </li>
-      </ul>
-    </section>
+          <div style="clear:both"></div>
+          <li>
+            <input type="text" ng-model="jobTitle" placeholder="Job title">
+          </li>
+          <li>
+            <input type="text" ng-model="celeb" placeholder="Celebrity"> 
+            <label>
+              <input type="radio" ng-model="sexCeleb.name" value="he">
+              Male
+            </label>
+            <label>
+              <input type="radio" ng-model="sexCeleb.name" value="she">
+              Female
+            </label>
+          </li>
+          <li>
+            <input type="text" ng-model="bigNum" placeholder="Huge number">
+          </li>
+          <div style="clear:both"></div>
+          <li>
+            <input type="text" ng-model="badTask" placeholder="Tedious task"> 
+          </li>
+          <li>
+            <input type="text" ng-model="badSkill" placeholder="Useless skill">
+          </li> 
+          <li>
+            <input type="text" ng-model="badCeleb" placeholder="Obnoxious celebrity">
+            <label>
+              <input type="radio" ng-model="sexBadCeleb.name" value="he">
+              Male
+            </label>
+            <label>
+              <input type="radio" ng-model="sexBadCeleb.name" value="she">
+              Female
+            </label>
+          </li>
 
-    <section class="story">
-      <p>{{femaleName}} was a {{jobTitle}} who loved rabbits, but she hated {{badTask}} and {{dirtyTask}}. She was best friends with {{celeb}}, and he or she told her she should eat {{bigNum | number}} hot dogs.</p>
-      <p>This sounded like good advice to her so she did, and she got so sick she had to stay in bed for {{bigNum|number}} days. She spent so much time in bed she learned {{badSkill}}, and realized {{celeb}} was very wise and meant for her to learn something from her mistakes. She just wished it wasn't something so {{adjective}}. Then she met {{badCeleb}} and puked.</p>
+        </ul>
+        <div style="clear:both"></div>
+      </section>
+      
 
-    </section>
+      <section class="story">
+        <p>{{name}} was a {{jobTitle}} who loved rabbits, but {{sexMain.name}} hated {{badTask}} and {{dirtyTask}}. <span ng-if="sexMain.name ==='she'">She </span><span ng-if="sexMain.name ==='he'">He </span> was best friends with {{celeb}}, and {{sexCeleb.name}}  told {{name}} {{sexMain.name}} should eat {{bigNum | number}} hot dogs.</p>
+        <p>This sounded like good advice to {{name}} so {{sexMain.name}} did, and {{sexMain.name}} got so sick {{sexMain.name}} had to stay in bed for {{bigNum|number}} days. <span ng-if="sexMain.name ==='she'">She </span><span ng-if="sexMain.name ==='he'">He </span> spent so much time in bed {{sexMain.name}} learned {{badSkill}}, and realized {{celeb}} was very wise and wanted {{name}} to learn something from <span ng-if="sexMain.name ==='she'">her </span><span ng-if="sexMain.name ==='he'">his </span> mistakes. {{name}} just wished it wasn't something so {{adjective}}. Then {{name}} met {{badCeleb}} and {{sexBadCeleb.name}} offered <span ng-if="sexMain.name ==='she'">her </span><span ng-if="sexMain.name ==='he'">him </span> a hotdog so {{name}}  puked.</p>
+
+      </section>
+    </div>
   </body>
 </html>
