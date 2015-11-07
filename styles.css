@@ -1,3 +1,7 @@
+.containerDiv {
+  margin-top: 4em;
+}
+
 heading {
   background-color: brown;
   margin-bottom: 0;
@@ -46,8 +50,7 @@ heading h1 {
 
 .inputs {
   width: 55em;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  border: 2px solid black;
   margin: 0 auto;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -59,7 +62,7 @@ heading h1 {
 }
 
 ul {
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 }
 
 li {
@@ -88,3 +91,47 @@ li input {
   margin: 1.5em 5%;
 }
 
+hr {
+  border: 1px solid black;
+  margin: .8em 3em;
+}
+
+#submitButton {
+  float: right;
+  display: inline-block;
+  margin: 1em 5em 1.6em;
+  border: 2px solid black;
+  font-size: 1em;
+  padding: .4em 1em;
+  background: white;
+  box-shadow: 3px 3px black;
+}
+
+#reset {
+  float: right;
+  display: inline-block;
+  margin: 0 4em 2em;
+  border: 2px solid black;
+  font-size: 1em;
+  box-shadow: 3px 3px black;
+  padding: .4em 1em;
+  background: white;
+}
+
+
+.popup {
+	position: fixed;
+	width: 600px;
+	margin: auto 30%;
+	height: 400px;
+	top: 100px;
+	z-index: 1000;
+  	text-align: center;
+	background: white;
+	border: 2px solid black;
+	box-shadow: 3px 3px black;
+}
+.popup h1 {
+  margin-top:6em;
+
+}
