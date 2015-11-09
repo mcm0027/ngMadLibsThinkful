@@ -123,7 +123,7 @@ hr {
 	position: fixed;
 	width: 600px;
 	margin: auto 30%;
-	height: 400px;
+	height: auto;
 	top: 100px;
 	z-index: 1000;
   	text-align: center;
@@ -132,6 +132,6 @@ hr {
 	box-shadow: 3px 3px black;
 }
 .popup h1 {
-  margin-top:6em;
+  margin-top:em;
 
 }
