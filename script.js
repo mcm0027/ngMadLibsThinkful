@@ -1,20 +1,21 @@
 angular.module('myApp', ['ngMessages'])
   .controller('oneController', ['$scope', function($scope) {
-  $scope.sexMain = {
-    name: 'female'
-  };
+  $scope.sexMain = {};
     
-  $scope.sexCeleb = {
-    name: 'female'
-  };
+  $scope.sexCeleb = {};
     
-  $scope.sexBadCeleb = {
-    name: 'female'
-  }
+  $scope.sexBadCeleb = {};
   
+   
   $scope.submit = function() {
+          console.log($scope.sexMain);
     if ($scope.madForm.$valid) {
-      console.log("the form is valid")
+      console.log("the form is valid");
+      
+
+      if ($scope.sexmain === "male") {
+        alert("cool");
+      }
     } else {
       $(".popup").show();
       $scope.madForm.$submitted = false;
@@ -44,15 +45,3 @@ $(document).keydown(function(){
 	});
   
 
-
-setTimeout(function(){
-  $("#she-main").attr('checked','checked');
-},10);
-
-setTimeout(function(){
-  $("#she-celeb").attr('checked','checked');
-},10);
-
-setTimeout(function(){
-  $("#she-bad").attr('checked','checked');
-},10);

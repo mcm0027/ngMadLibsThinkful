@@ -35,6 +35,9 @@
         <h3 ng-if="madForm.badTask.$error.required"> tedious task </h3>
         <h3 ng-if="madForm.badSkill.$error.required"> useless skill </h3>
         <h3 ng-if="madForm.badCeleb.$error.required"> obnoxious celebrity </h3>
+        <h3 ng-if="madForm.mainSex.$error.required"> your main character's sex </h3>
+        <h3 ng-if="madForm.celebSex.$error.required"> the celebrity's sex </h3>
+        <h3 ng-if="madForm.badCelebSex.$error.required"> the obnoxious celebrity's sex </h3>
         
       </div>
       <section class="inputs" ng-hide="madForm.$submitted && madForm.$valid">
@@ -44,11 +47,11 @@
             <li>
               <input class="name-field" type="text" ng-model="name" placeholder="Name" name="name" required>
               <label>
-                <input type="radio" ng-model="sexMain.name" name="mainSex" value="he">
+                <input type="radio" ng-model="sexMain.name" name="mainSex" value="he" required>
                 Male
               </label>
               <label>
-                <input type="radio" ng-model="sexMain.name" name="mainSex" value="she" id="she-main">
+                <input type="radio" ng-model="sexMain.name" name="mainSex" value="she" required>
                 Female
               </label>
             </li>
@@ -66,11 +69,11 @@
             <li>
               <input type="text" ng-model="celeb" placeholder="Celebrity" name="celeb" required> 
               <label>
-                <input type="radio" name="celeb" ng-model="sexCeleb.name" value="he" >
+                <input type="radio" name="celeb" ng-model="sexCeleb.name" value="he" name="celebSex" required>
                 Male
               </label>
               <label>
-                <input type="radio" name="celeb" ng-model="sexCeleb.name" value="she" id="she-celeb">
+                <input type="radio" name="celeb" ng-model="sexCeleb.name" value="she" name="celebSex" required>
                 Female
               </label>
             </li>
@@ -87,11 +90,11 @@
             <li>
               <input type="text" ng-model="badCeleb" placeholder="Obnoxious celebrity" name="badCeleb" required>
               <label>
-                <input type="radio" ng-model="sexBadCeleb.name" value="he">
+                <input type="radio" ng-model="sexBadCeleb.name" value="he" name="badCelebSex" required>
                 Male
               </label>
               <label>
-                <input type="radio" ng-model="sexBadCeleb.name" value="she" id="she-bad">
+                <input type="radio" ng-model="sexBadCeleb.name" value="she" name="badCelebSex" required>
                 Female
               </label>
             </li>
