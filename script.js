@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngMessages'])
+angular.module('myApp', ['ngMessages', 'ngAnimate'])
   .controller('oneController', ['$scope', function($scope) {
   $scope.sexMain = {};
     
@@ -10,12 +10,7 @@ angular.module('myApp', ['ngMessages'])
   $scope.submit = function() {
           console.log($scope.sexMain);
     if ($scope.madForm.$valid) {
-      console.log("the form is valid");
-      
-
-      if ($scope.sexmain === "male") {
-        alert("cool");
-      }
+      $(".popup").hide();
     } else {
       $(".popup").show();
       $scope.madForm.$submitted = false;
@@ -31,8 +26,9 @@ angular.module('myApp', ['ngMessages'])
 }]);
 
 
-setTimeout(function(){
-  $(".popup").hide();}, 1);
+$(document).ready(function(){
+  $(".popup").hide();
+});
   
   
 $(document).click(function(){

@@ -4,9 +4,9 @@
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-messages.min.js"></script>
-    <script type="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js"></script>
     <script src="script.js"></script>
   </head>
   <body ng-app="myApp">
@@ -40,7 +40,7 @@
         <h3 ng-if="madForm.badCelebSex.$error.required"> the obnoxious celebrity's sex </h3>
         
       </div>
-      <section class="inputs" ng-hide="madForm.$submitted && madForm.$valid">
+       <section class="inputs" ng-hide="madForm.$valid && madForm.$submitted">
         <h2>Please provide the following words:</h2>
         <form name="madForm" id="form" novalidate ng-submit="submit()">
           <ul>
@@ -101,17 +101,25 @@
             <div style="clear:both"></div>
           </ul>
           <hr>
-          <input type="submit" id="submitButton" value="Generate My Mad Lib">
-        </form>
-        <div style="clear:both"></div>
+          <input type="submit" id="submitButton" value="Generate My Mad Lib"> 
+        </form> 
+       <div style="clear:both"></div>
       </section>
 
-      <section class="story" id="story" ng-show="madForm.$submitted && madForm.$valid">
-        <p>{{name}} was a {{jobTitle}} who loved rabbits, but {{sexMain.name}} hated {{badTask}} and {{dirtyTask}}. <span ng-if="sexMain.name ==='she'">She </span><span ng-if="sexMain.name ==='he'">He </span> was best friends with {{celeb}}, and {{sexCeleb.name}}  told {{name}} {{sexMain.name}} should eat {{bigNum | number}} hot dogs.</p>
-        <p>This sounded like good advice to {{name}} so {{sexMain.name}} did, and {{sexMain.name}} got so sick {{sexMain.name}} had to stay in bed for {{bigNum|number}} days. <span ng-if="sexMain.name ==='she'">She </span><span ng-if="sexMain.name ==='he'">He </span> spent so much time in bed {{sexMain.name}} learned {{badSkill}}, and realized {{celeb}} was very wise and wanted {{name}} to learn something from <span ng-if="sexMain.name ==='she'">her </span><span ng-if="sexMain.name ==='he'">his </span> mistakes. {{name}} just wished it wasn't something so {{adjective}}. Then {{name}} met {{badCeleb}} and {{sexBadCeleb.name}} offered <span ng-if="sexMain.name ==='she'">her </span><span ng-if="sexMain.name ==='he'">him </span> a hotdog so {{name}}  puked.</p>
+     <section class="story animate-show" id="story" ng-show="madForm.$submitted && madForm.$valid"> 
+        <p>{{name}} was a {{jobTitle}} who loved rabbits, but {{sexMain.name}} hated {{badTask}} and {{dirtyTask}}. 
+          <span ng-if="sexMain.name ==='she'">She </span>
+          <span ng-if="sexMain.name ==='he'">He </span> was best friends with {{celeb}}, and {{sexCeleb.name}}  told {{name}} {{sexMain.name}} should eat {{bigNum | number}} hot dogs.</p>
+        <p>This sounded like good advice to {{name}} so {{sexMain.name}} did, and {{sexMain.name}} got so sick {{sexMain.name}} had to stay in bed for {{bigNum|number}} days. 
+          <span ng-if="sexMain.name ==='she'">She </span>
+          <span ng-if="sexMain.name ==='he'">He </span> spent so much time in bed {{sexMain.name}} learned {{badSkill}}, and realized {{celeb}} was very wise and wanted {{name}} to learn something from 
+          <span ng-if="sexMain.name ==='she'">her </span>
+          <span ng-if="sexMain.name ==='he'">his </span> mistakes. {{name}} just wished it wasn't something so {{adjective}}. Then {{name}} met {{badCeleb}} and {{sexBadCeleb.name}} offered 
+          <span ng-if="sexMain.name ==='she'">her </span>
+          <span ng-if="sexMain.name ==='he'">him </span> a hotdog so {{name}}  puked.</p>
         <button id="reset" value="Start Over" ng-click="reset()">Start Over</button>
                 <div style="clear:both"></div>
-      </section>
+   </section>
     </div>
   </body>
 </html>
